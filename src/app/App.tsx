@@ -7,30 +7,13 @@ import { DisclaimerPage } from "../pages/disclaimerPage/DisclaimerPage";
 import { PrivacyPage } from "../pages/privacyPage/PrivacyPage";
 import { ContactsPage } from "../pages/contactsPage/ContactsPage";
 import { MainHome } from "../pages/mainHome/ui/MainHome";
-import HomePage from "../pages/home/ui/HomePage";
 
 import { MainHeader } from "../widgets/mainHeader/MainHeader";
 import { MainFooter } from "../widgets/mainFooter/MainFooter";
 
-import Header from "../widgets/header";
-import Footer from "../widgets/footer/Footer";
-
 import { ScrollToTop } from "./providers/ScrollToTop";
 
 import "../index.css";
-
-// Layout для HomePage
-const HomeLayout = () => (
-  <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
-    <Header />
-
-    <main style={{ flex: 1 }}>
-      <HomePage />
-    </main>
-
-    <Footer />
-  </div>
-);
 
 // Layout для остальных страниц
 const MainLayout = () => (
@@ -57,9 +40,7 @@ export const App: React.FC = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-
       <Routes>
-        <Route path="/blog" element={<HomeLayout />} />
         <Route path="/*" element={<MainLayout />} />
       </Routes>
     </BrowserRouter>
